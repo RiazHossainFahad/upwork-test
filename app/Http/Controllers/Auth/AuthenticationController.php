@@ -32,7 +32,11 @@ class AuthenticationController extends Controller
             'avatar' => 'bail|nullable|image|dimensions:width=256,height=256'
         ];
 
-        if ($validation = apiValidation($request, $rules)) {
+        $messages = [
+            'avatar.dimensions' => 'Only allows 256*256 dimensions.'
+        ];
+
+        if ($validation = apiValidation($request, $rules, $messages)) {
             return $validation;
         }
 
