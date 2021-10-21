@@ -15,6 +15,9 @@ class User extends Authenticatable
     public const ROLE_USER = 'user';
     public const ROLE_ADMIN = 'admin';
 
+    public const ACTIVE = 1;
+    public const INACTIVE = 0;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,6 +30,7 @@ class User extends Authenticatable
         'password',
         'user_role',
         'avatar',
+        'status'
     ];
 
     /**
